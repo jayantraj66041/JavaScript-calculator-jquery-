@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="jquery-3.3.1.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Allerta Stencil' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Alex Brush' rel='stylesheet'>
+</head>
+<body>
+	<div class="calculator">
+		<div class="row">
+			<div class="display view"></div>
+		</div>
+		<div class="row">
+			<button type="text" class="button bg-dark">M</button>
+			<button type="text" class="button bg-dark">M-</button>
+			<button type="text" class="button bg-dark">M+</button>
+			<button type="text" class="button cancle bg-color">C</button>
+		</div>
+		<div class="row">
+			<button type="text" class="button num bg-light">7</button>
+			<button type="text" class="button num bg-light">8</button>
+			<button type="text" class="button num bg-light">9</button>
+			<button type="text" class="button ope bg-dark">/</button>
+		</div>
+		<div class="row">
+			<button type="text" class="button num bg-light">4</button>
+			<button type="text" class="button num bg-light">5</button>
+			<button type="text" class="button num bg-light">6</button>
+			<button type="text" class="button ope bg-dark">*</button>
+		</div>
+		<div class="row">
+			<button type="text" class="button num bg-light">1</button>
+			<button type="text" class="button num bg-light">2</button>
+			<button type="text" class="button num bg-light">3</button>
+			<button type="text" class="button ope bg-dark">-</button>
+		</div>
+		<div class="row">
+			<button type="text" class="button num bg-light">.</button>
+			<button type="text" class="button num bg-light">0</button>
+			<button type="text" class="button equal bg-color">=</button>
+			<button type="text" class="button ope bg-dark">+</button>
+		</div>
+		<div class="row">
+			<h4 class="text">Designed by Jayant Raj</h4>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			var data = "";
+			var display = "";
+			$(".num").click(function(){
+				data = data+$(this).text();
+				display = display+$(this).text();
+				$(".display").text(display);
+			});
+			$(".ope").click(function(){
+				data = data+$(this).text()
+				display = ""
+				$(".display").text("")
+			})
+			$(".equal").click(function(){
+				display = eval(data);
+				$(".display").text(display)
+			})
+			$(".cancle").click(function(){
+				display = ""
+				data = ""
+				$(".display").text("")
+			})
+		});
+	</script>
+</body>
+</html>
